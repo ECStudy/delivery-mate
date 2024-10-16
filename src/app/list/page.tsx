@@ -24,13 +24,19 @@ const handleParticipate = (id: number) => {
     router.push(`/list/${id}`)
 }
 
+const handleLogin = () => {
+  router.push('my')
+}
+
   return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-white shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <h1 className="text-2xl font-bold text-gray-900">딜리버리 메이트</h1>
           <div>
-            <Button variant="ghost" className="mr-2">로그인</Button>
+            <Button
+                onClick={handleLogin}
+            variant="ghost" className="mr-2">로그인</Button>
             <Button>회원가입</Button>
           </div>
         </div>
