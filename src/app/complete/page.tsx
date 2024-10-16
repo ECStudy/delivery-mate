@@ -110,7 +110,7 @@ export default function CompletedPartyPage() {
                 </p>
               </div>
             </div>
-            <Button className="w-full mt-4">
+            <Button className="w-full mt-4 bg-black text-white">
               <DollarSign className="mr-2" />
               정산 알림 보내기
             </Button>
