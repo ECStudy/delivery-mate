@@ -18,11 +18,6 @@ export const fetcher = async <T>(
   url: string,
   options?: Options,
 ): Promise<FetcherResponse<T>> => {
-  try {
-    const response = await api.get(url, options).json<T>();
-    return { data: response };
-  } catch (error) {
-    console.error('Fetch error:', error);
-    return { data: null as unknown as T, error: (error as Error).message };
-  }
+  const response = await api.get(url, options).json<T>();
+  return { data: response };
 };
