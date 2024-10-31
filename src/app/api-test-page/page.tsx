@@ -1,13 +1,10 @@
 'use client';
 
+import { fetcher } from '@/lib/fetcher';
 import useSwr from 'swr';
-
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function APITestPage() {
   const { data, error } = useSwr('/api/status', fetcher);
-
-  console.log('data:', data);
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
