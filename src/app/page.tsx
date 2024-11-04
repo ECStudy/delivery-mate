@@ -1,23 +1,19 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Utensils, Users, Clock, TrendingUp } from 'lucide-react'
-import Link from 'next/link'
+import { Button } from '@/components/ui/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Header } from '@/components/ui/header';
+import { Utensils, Users, Clock, TrendingUp } from 'lucide-react';
+import Link from 'next/link';
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
-      <header className="bg-white shadow">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
-          <h1 className="text-3xl font-bold text-gray-900">딜리버리 메이트</h1>
-          <nav>
-            <Link href="/login" passHref>
-              <Button
-              className="bg-black text-white"
-              >로그인</Button>
-            </Link>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <section className="text-center mb-16">
@@ -28,9 +24,7 @@ export default function HomePage() {
             딜리버리 메이트와 함께라면 점심, 저녁 시간이 더욱 즐거워집니다.
           </p>
           <Link href="/login" passHref>
-            <Button 
-            className="bg-black text-white"
-            size="lg">
+            <Button className="bg-black text-white" size="lg">
               지금 시작하기
             </Button>
           </Link>
@@ -109,5 +103,5 @@ export default function HomePage() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
