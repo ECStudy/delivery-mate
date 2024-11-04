@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
 
 export async function GET(req: Request) {
-  return NextResponse.json({ status: 'failed' }, { status: 500 });
+  return NextResponse.json({ status: 'success' }, { status: 200 });
 }
