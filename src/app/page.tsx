@@ -6,15 +6,12 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Header } from '@/components/ui/header';
 import { Utensils, Users, Clock, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white">
-      <Header />
-
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <section className="text-center mb-16">
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
@@ -94,14 +91,6 @@ export default function HomePage() {
           </Link>
         </section>
       </main>
-
-      <footer className="bg-gray-100 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <p className="text-center text-gray-500">
-            © 2024 딜리버리 메이트. All rights reserved.
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }
