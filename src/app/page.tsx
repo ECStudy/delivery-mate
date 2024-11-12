@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/button/button';
 import {
   Card,
   CardContent,
@@ -21,9 +21,7 @@ export default function HomePage() {
             딜리버리 메이트와 함께라면 점심, 저녁 시간이 더욱 즐거워집니다.
           </p>
           <Link href="/login" passHref>
-            <Button className="bg-black text-white" size="lg">
-              지금 시작하기
-            </Button>
+            <Button bg_color="black">지금 시작하기</Button>
           </Link>
         </section>
 
@@ -85,9 +83,7 @@ export default function HomePage() {
             맛있는 음식과 즐거운 경험이 여러분을 기다리고 있습니다.
           </p>
           <Link href="/login" passHref>
-            <Button size="lg" variant="outline">
-              회원가입 하기
-            </Button>
+            <Button bg_color="white">회원가입 하기</Button>
           </Link>
         </section>
       </main>

@@ -8,15 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      screens: {
-        desktop: '1048px',
-      },
       colors: {
         'gray-100': '#F3F3F3',
         'gray-200': '#DDDDDD',
         'gray-300': '#C6C6C6',
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+      },
+      minHeight: {
+        screen: 'calc(100vh - 72px)',
+      },
+      screens: {
+        desktop: '1048px',
       },
     },
   },

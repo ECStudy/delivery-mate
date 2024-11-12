@@ -1,27 +1,51 @@
-"use client";
+'use client';
 
-import { useState } from 'react'
-import { Clock, Users, MapPin, ChevronRight } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Progress } from "@/components/ui/progress"
+import { useState } from 'react';
+import { Clock, Users, MapPin, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/button/button';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Progress } from '@/components/ui/progress';
 
 const partyMembers = [
   { id: 1, name: '김철수', avatar: '/placeholder.svg?height=32&width=32' },
   { id: 2, name: '이영희', avatar: '/placeholder.svg?height=32&width=32' },
   { id: 3, name: '박민수', avatar: '/placeholder.svg?height=32&width=32' },
   { id: 4, name: '정지은', avatar: '/placeholder.svg?height=32&width=32' },
-]
+];
 
 const otherRooms = [
-  { id: 1, name: '치킨 파티', restaurant: '교촌치킨', members: 3, timeLeft: '30분' },
-  { id: 2, name: '피자 나라', restaurant: '도미노피자', members: 2, timeLeft: '45분' },
-  { id: 3, name: '분식 모임', restaurant: '엽기떡볶이', members: 4, timeLeft: '15분' },
-]
+  {
+    id: 1,
+    name: '치킨 파티',
+    restaurant: '교촌치킨',
+    members: 3,
+    timeLeft: '30분',
+  },
+  {
+    id: 2,
+    name: '피자 나라',
+    restaurant: '도미노피자',
+    members: 2,
+    timeLeft: '45분',
+  },
+  {
+    id: 3,
+    name: '분식 모임',
+    restaurant: '엽기떡볶이',
+    members: 4,
+    timeLeft: '15분',
+  },
+];
 
 export default function PartyDetailPage() {
-  const [remainingTime, setRemainingTime] = useState(45) // 남은 시간 (분)
+  const [remainingTime, setRemainingTime] = useState(45); // 남은 시간 (분)
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -62,12 +86,12 @@ export default function PartyDetailPage() {
         {/* 배달 상세 내용 섹션 */}
         <section className="bg-white rounded-lg shadow-md p-6 mb-8">
           <div className="flex items-start">
-            <div 
-                className="bg-gray-200 h-24 w-24 bg-cover bg-center rounded-lg mr-4" 
-            />
+            <div className="bg-gray-200 h-24 w-24 bg-cover bg-center rounded-lg mr-4" />
             <div>
               <h2 className="text-xl font-semibold mb-2">BBQ 치킨</h2>
-              <p className="text-gray-600 mb-4">맛있고 건강한 치킨, 오늘의 특별 할인!</p>
+              <p className="text-gray-600 mb-4">
+                맛있고 건강한 치킨, 오늘의 특별 할인!
+              </p>
               <div className="space-y-2">
                 <div className="flex items-center text-sm text-gray-500">
                   <span className="font-medium mr-2">주문 예정 메뉴:</span>
@@ -99,7 +123,7 @@ export default function PartyDetailPage() {
           <h2 className="text-xl font-semibold mb-4">다른 배달 파티</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {otherRooms.map((room) => (
-              <Card key={room.id} className='bg-white'>
+              <Card key={room.id} className="bg-white">
                 <CardHeader>
                   <CardTitle>{room.name}</CardTitle>
                 </CardHeader>
@@ -117,7 +141,7 @@ export default function PartyDetailPage() {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button variant="outline" className="w-full">
+                  <Button className="w-full">
                     상세보기
                     <ChevronRight size={16} className="ml-2" />
                   </Button>
@@ -128,6 +152,5 @@ export default function PartyDetailPage() {
         </section>
       </main>
     </div>
-  )
+  );
 }
-
