@@ -9,7 +9,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from '@/components/card/card';
 import { Textarea } from '@/components/ui/textarea';
 
 export default function AmazingFeedback() {

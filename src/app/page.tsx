@@ -5,7 +5,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from '@/components/card/card';
 import { Utensils, Users, Clock, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 

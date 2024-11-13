@@ -31,35 +31,21 @@ const AuthButtons = function AuthButtons({ isLogin }: { isLogin: boolean }) {
     <div className="flex gap-1">
       {isLogin ? (
         <>
-          <LinkButton
-            href="/my"
-            label={LABELS.MYPAGE}
-            rounded="full"
-            sizeLevel="small"
-          />
-          <LinkButton
-            href="/"
-            label={LABELS.SIGNOUT}
-            bg_color="gray"
-            rounded="full"
-            sizeLevel="small"
-          />
+          <LinkButton href="/my" rounded="full" sizeLevel="small">
+            {LABELS.MYPAGE}
+          </LinkButton>
+          <LinkButton href="/" bg_color="gray" rounded="full" sizeLevel="small">
+            {LABELS.SIGNOUT}
+          </LinkButton>
         </>
       ) : (
         <>
-          <LinkButton
-            href="/login"
-            label={LABELS.SIGNIN}
-            rounded="full"
-            sizeLevel="small"
-          />
-          <LinkButton
-            href="/"
-            label={LABELS.SIGNUP}
-            bg_color="gray"
-            rounded="full"
-            sizeLevel="small"
-          />
+          <LinkButton href="/login" rounded="full" sizeLevel="small">
+            {LABELS.SIGNIN}
+          </LinkButton>
+          <LinkButton href="/" bg_color="gray" rounded="full" sizeLevel="small">
+            {LABELS.SIGNUP}
+          </LinkButton>
         </>
       )}
     </div>

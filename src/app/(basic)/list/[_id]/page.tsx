@@ -9,7 +9,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from '@/components/card/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Progress } from '@/components/ui/progress';
 
@@ -48,7 +48,7 @@ export default function PartyDetailPage() {
   const [remainingTime, setRemainingTime] = useState(45); // 남은 시간 (분)
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen w-full bg-gray-100">
       <main className="max-w-4xl mx-auto px-4 py-8">
         {/* 파티 정보 섹션 */}
         <section className="bg-white rounded-lg shadow-md p-6 mb-8">

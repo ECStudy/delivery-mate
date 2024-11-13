@@ -9,10 +9,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
+} from '@/components/card/card';
 import { useRouter } from 'next/navigation';
-import { ViewMode } from './components/ViewMode';
 import { Button } from '@/components/button';
+import { ViewMode } from './components';
 
 const restaurants = [
   {

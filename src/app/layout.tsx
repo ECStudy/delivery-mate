@@ -49,11 +49,7 @@ const RootLayout = function RootLayout({
   return (
     <OurDocument>
       <Header />
-      <div className="bg-gray-100">
-        <div className="flex justify-between items-center desktop:max-w-5xl mx-auto px-7 desktop:px-0 py-5">
-          <ErrorBoundary>{children}</ErrorBoundary>
-        </div>
-      </div>
+      <ErrorBoundary>{children}</ErrorBoundary>
       <Footer />
     </OurDocument>
   );
