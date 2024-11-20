@@ -43,7 +43,12 @@ const AuthButtons = function AuthButtons({ isLogin }: { isLogin: boolean }) {
           <LinkButton href="/login" rounded="full" sizeLevel="small">
             {LABELS.SIGNIN}
           </LinkButton>
-          <LinkButton href="/" bg_color="gray" rounded="full" sizeLevel="small">
+          <LinkButton
+            href="/signup"
+            bg_color="gray"
+            rounded="full"
+            sizeLevel="small"
+          >
             {LABELS.SIGNUP}
           </LinkButton>
         </>
