@@ -5,6 +5,10 @@ type IPartyMember = {
   price: number;
   status: string;
 };
+export interface ITest {
+  name: string;
+  age: number;
+}
 
 export interface IParty {
   member: IPartyMember[];
