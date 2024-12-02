@@ -4,11 +4,18 @@ import { ZodError } from 'zod';
 
 export const apiWrapper = async (
   req: NextRequest,
-  res: NextResponse,
-  handler: (req: NextRequest, res: NextResponse) => Promise<NextResponse>,
+  options: {
+    params: Record<string, string>;
+  },
+  handler: (
+    req: NextRequest,
+    options: {
+      params: Record<string, string>;
+    },
+  ) => Promise<NextResponse>,
 ) => {
   try {
-    return await handler(req, res);
+    return await handler(req, options);
   } catch (error: unknown) {
     if (error instanceof ZodError) {
       return NextResponse.json({ error: error.errors }, { status: 400 });

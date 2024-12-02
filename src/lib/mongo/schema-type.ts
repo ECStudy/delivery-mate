@@ -1,7 +1,11 @@
 export type OurDate = Date | string;
+export type StatusTypes = 'progress' | 'complete' | 'cancel';
 
 type IPartyMember = {
-  user: IUser;
+  userId: string;
+  nickname: string;
+  name: string;
+  profile: string;
   price: number;
   status: string;
 };
@@ -18,8 +22,9 @@ export interface IParty {
   tags: string[];
   maxMember: number;
   limitTime: number;
-  status: string;
-  due: [OurDate, OurDate];
+  status: StatusTypes;
+  startDate: OurDate;
+  endDate: OurDate;
   createdAt: OurDate;
   updatedAt: OurDate;
   deletedAt: OurDate | null;
@@ -36,6 +41,7 @@ export interface IUser {
   email: string;
   name: string;
   nickname: string;
+  profile: string;
   accessToken: string;
   history: IHistory[];
   createdAt: OurDate;
