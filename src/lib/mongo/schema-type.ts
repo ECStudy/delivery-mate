@@ -1,4 +1,7 @@
+import { ObjectId } from 'mongodb';
+
 export type OurDate = Date | string;
+export type OurId = ObjectId | string;
 export type StatusTypes = 'progress' | 'complete' | 'cancel';
 
 type IPartyMember = {
@@ -15,6 +18,7 @@ export interface ITest {
 }
 
 export interface IParty {
+  _id: string;
   member: IPartyMember[];
   title: string;
   description: string;

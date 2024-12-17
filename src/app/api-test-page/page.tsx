@@ -4,7 +4,7 @@ import { fetcher } from '@/lib/fetcher';
 import useSwr from 'swr';
 
 export default function APITestPage() {
-  const { data, error } = useSwr('/api/status', fetcher);
+  const { data, error } = useSwr('/api/status', fetcher.get);
 
   if (error) return <div>Failed to load</div>;
   if (!data) return <div>Loading...</div>;
