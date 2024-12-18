@@ -15,7 +15,9 @@ async function get_handler(
   const { party_id } = await getPartySchema.parse(params);
   const partyCollection = await collection.party();
 
-  const result = await partyCollection.findOne({ _id: new ObjectId(party_id) });
+  const result = await partyCollection.findOne({
+    _id: new ObjectId(party_id),
+  } as any);
 
   if (!result) {
     return NextResponse.json(
