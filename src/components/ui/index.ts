@@ -1,7 +1,6 @@
 export * from './checkbox';
 export * from './input';
 export * from './avatar';
-export * from './card';
 export * from './collapsible';
 export * from './footer';
 export * from './header';

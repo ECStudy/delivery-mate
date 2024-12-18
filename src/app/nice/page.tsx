@@ -2,15 +2,15 @@
 
 import { useState } from 'react';
 import { Star, Send } from 'lucide-react';
-import { Button } from '@/components/button/button';
 import {
+  Button,
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/card/card';
-import { Textarea } from '@/components/ui/textarea';
+  Textarea,
+} from '@/components';
 
 export default function AmazingFeedback() {
   const [rating, setRating] = useState(0);

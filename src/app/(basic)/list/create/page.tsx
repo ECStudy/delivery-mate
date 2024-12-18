@@ -1,29 +1,28 @@
 'use client';
 
 import { useState } from 'react';
-import { Button } from '@/components/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
+import { PlusCircle, X } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { NewParty } from '@/lib/validator/party';
+import { createParty } from '@/lib/party/create-party';
+
 import {
+  Button,
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card';
-import {
+  Input,
+  Label,
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { PlusCircle, X } from 'lucide-react';
-import { useRouter } from 'next/navigation';
-import { NewParty } from '@/lib/validator/party';
-import { createParty } from '@/lib/party/create-party';
+  Textarea,
+} from '@/components';
 
 type StatusTypes = 'progress' | 'complete' | 'cancel';
 

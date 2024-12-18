@@ -9,20 +9,26 @@ import {
   HelpCircle,
   ChevronRight,
 } from 'lucide-react';
-import { Button } from '@/components/button/button';
-import { Input } from '@/components/ui/input';
+
 import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+  Button,
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/card/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Progress } from '@/components/ui/progress';
-import { Label } from '@/components/ui/label';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+  Input,
+  Label,
+  Progress,
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from '@/components';
 
 export default function MyPage() {
   const [nickname, setNickname] = useState('배달의 고수');

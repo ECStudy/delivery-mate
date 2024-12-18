@@ -1,13 +1,14 @@
-import { Button } from '@/components/button/button';
+import { Utensils, Users, Clock, TrendingUp } from 'lucide-react';
+import Link from 'next/link';
+
 import {
+  Button,
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from '@/components/card/card';
-import { Utensils, Users, Clock, TrendingUp } from 'lucide-react';
-import Link from 'next/link';
+} from '@/components';
 
 export default function HomePage() {
   return (

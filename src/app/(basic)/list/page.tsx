@@ -2,20 +2,21 @@
 
 import { useState } from 'react';
 import { Search, Clock, Users } from 'lucide-react';
-import { Input } from '@/components/ui/input';
+import { useRouter } from 'next/navigation';
+import { fetcher } from '@/lib/fetcher';
+import { IParty } from '@/lib/mongo';
+import useSWR from 'swr';
+
 import {
+  Button,
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/card/card';
-import { useRouter } from 'next/navigation';
-import { Button } from '@/components/button';
+  Input,
+} from '@/components';
 import { ViewMode } from './components';
-import useSWR from 'swr';
-import { fetcher } from '@/lib/fetcher';
-import { IParty } from '@/lib/mongo';
 
 export default function ListPage() {
   const { data: parties, isLoading } = useSWR<IParty[]>(

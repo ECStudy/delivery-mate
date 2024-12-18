@@ -10,19 +10,20 @@ import {
   Users,
   Clock,
 } from 'lucide-react';
-import { Button } from '@/components/button/button';
+
 import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+  Button,
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from '@/components/card/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from '@/components/ui/collapsible';
+} from '@/components';
 
 const partyMembers = [
   {

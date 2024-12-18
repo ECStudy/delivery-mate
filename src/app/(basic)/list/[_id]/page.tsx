@@ -2,16 +2,19 @@
 
 import { useState } from 'react';
 import { Clock, Users, MapPin, ChevronRight } from 'lucide-react';
-import { Button } from '@/components/button/button';
+
 import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+  Button,
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/card/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Progress } from '@/components/ui/progress';
+  Progress,
+} from '@/components';
 
 const partyMembers = [
   { id: 1, name: '김철수', avatar: '/placeholder.svg?height=32&width=32' },
