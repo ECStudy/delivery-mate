@@ -12,7 +12,7 @@ const SignUpPage = memo(function SignUpPage() {
   const [sendAuthentication, setSendAuthentication] = useState(false);
 
   /** 인증요청 하기 */
-  const sendAuthenticationNum = () => {
+  const sendAuthenticationNum = async () => {
     // 1. 유효성 검사
     if (!checkEmailFormat(email)) {
       alert('이메일 형식을 확인해 주세요');
@@ -20,6 +20,11 @@ const SignUpPage = memo(function SignUpPage() {
     }
 
     // 2. 서버에 인증번호 요청
+    await fetch('/api/send-email', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
 
     // 3. 인증번호 이메일로 보내지면
     setSendAuthentication(true);

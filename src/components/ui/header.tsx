@@ -30,7 +30,7 @@ const AuthButtons = function AuthButtons({ isLogin }: { isLogin: boolean }) {
 
   return (
     <div className="flex gap-1">
-      {true ? (
+      {isLogin ? (
         <div className="flex gap-2 items-center">
           <LinkButton href="/my">{LABELS.MYPAGE}</LinkButton>
           {/* <LinkButton href="/" bg_color="gray">
