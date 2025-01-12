@@ -1,5 +1,6 @@
 import {
   clientPromise,
+  IAuthentication,
   ICategories,
   IParty,
   IRestaurants,
@@ -14,6 +15,8 @@ async function getMongo() {
 export const collection = {
   test: async () => (await getMongo()).db().collection<ITest>('test'),
   user: async () => (await getMongo()).db().collection<IUser>('user'),
+  authentication: async () =>
+    (await getMongo()).db().collection<IAuthentication>('authentication'),
   party: async () => (await getMongo()).db().collection<IParty>('party'),
   restaurants: async () =>
     (await getMongo()).db().collection<IRestaurants>('restaurants'),

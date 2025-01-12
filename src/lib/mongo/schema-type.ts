@@ -53,6 +53,12 @@ export interface IUser {
   deletedAt: OurDate | null;
 }
 
+export interface IAuthentication {
+  email: string;
+  authenticationCode: string;
+  codeExpiresAt: OurDate;
+}
+
 export interface IRestaurants {
   name: string;
   address: string;

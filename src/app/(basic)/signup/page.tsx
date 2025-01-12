@@ -1,15 +1,19 @@
 'use client';
 
 import { memo, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+
+import { Button, Input } from '@/components';
 import { Timer } from './components/timer';
 import { checkEmailFormat } from './utils';
-import { Button, Input } from '@/components';
 
 const SignUpPage = memo(function SignUpPage() {
   const [email, setEmail] = useState('');
-  const [certificationNum, setCertificationNum] = useState('');
+  const [authenticationCode, setAuthenticationCode] = useState('');
   const [sendAuthentication, setSendAuthentication] = useState(false);
+
+  const router = useRouter();
 
   /** 인증요청 하기 */
   const sendAuthenticationNum = async () => {
@@ -20,31 +24,54 @@ const SignUpPage = memo(function SignUpPage() {
     }
 
     // 2. 서버에 인증번호 요청
-    await fetch('/api/send-email', {
+    const res = await fetch('/api/authentication', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email }),
     });
 
     // 3. 인증번호 이메일로 보내지면
-    setSendAuthentication(true);
+    if (res.ok) {
+      setSendAuthentication(true);
+    } else {
+      alert('다시 한 번 시도해 주세요');
+    }
   };
 
   /** 이메일 다시 보내기 */
-  const handleReSendEmail = () => {
+  const handleReSendEmail = async () => {
     // 저장된 인증번호 삭제
-
-    setCertificationNum('');
+    setAuthenticationCode('');
     setSendAuthentication(false);
   };
 
   /** 회원가입 하기 */
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
-    // 1. 인증번호 동일한지 확인
+    const res = await fetch(
+      `/api/authentication?email=${email}&authenticationCode=${authenticationCode}`,
+      {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      },
+    );
 
-    // router.push('/list');
+    if (res.ok) {
+      await fetch('/api/user', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      await fetch('/api/authentication', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      router.push('/login');
+    }
   };
 
   return (
@@ -84,8 +111,8 @@ const SignUpPage = memo(function SignUpPage() {
           <Input
             placeholder="인증번호 입력"
             sizeLevel="full"
-            value={certificationNum}
-            onChange={(e) => setCertificationNum(e.target.value)}
+            value={authenticationCode}
+            onChange={(e) => setAuthenticationCode(e.target.value)}
             disabled={!sendAuthentication}
             required
           />
